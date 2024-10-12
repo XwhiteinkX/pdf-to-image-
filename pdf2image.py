@@ -1,7 +1,7 @@
 import fitz  # PyMuPDF
 import os
 
-# 取用绝对路径
+# Use absolute path
 def get_all_files(directory):
     file_list = []
     for root, dirs, files in os.walk(directory):
@@ -10,38 +10,38 @@ def get_all_files(directory):
             file_list.append(file_path)
     return file_list
 
-# 指定待转换pdf路径
-directory = #在这里输入装pdf的文件夹路径
+# Specify the path of the PDF to be converted
+directory = # Enter the path to the folder containing the PDF files here
 files = get_all_files(directory)
 
 for file in files:
     pdf_path = file
 
-    # 定义图片保存的路径（与PDF文件同名的文件夹）
+    # Define the path to save images (a folder named the same as the PDF file)
     save_path = os.path.join(os.path.dirname(pdf_path), os.path.splitext(os.path.basename(pdf_path))[0])
 
-    # 如果保存路径不存在，则创建该路径
+    # Create the save path if it does not exist
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
-    # 打开PDF文件
+    # Open PDF file
     doc = fitz.open(pdf_path)
 
-    # 遍历PDF的每一页
+    # Iterate through each page of the PDF
     for page_number in range(len(doc)):
-        # 获取页面对象
+        # Get the page object
         page = doc.load_page(page_number)
 
-        # 将PDF页面转换为图片（pix对象）
-        pix = page.get_pixmap(dpi=300)  # 设置DPI为300
+        # Convert the PDF page to an image (pix object)
+        pix = page.get_pixmap(dpi=300)  # Set DPI to 300
 
-        # 定义图片的保存路径和文件名
+        # Define the save path and file name for the image
         image_path = os.path.join(save_path, f'page_{page_number + 1}.png')
 
-        # 保存图片
+        # Save image
         pix.save(image_path)
 
-    # 关闭文档对象
+    # Close the document object
     doc.close()
 
-print("PDF转换完成。")
+print("PDF conversion completed.")
