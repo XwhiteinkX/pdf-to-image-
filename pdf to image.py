@@ -11,7 +11,7 @@ def get_all_files(directory):
     return file_list
 
 # 指定待转换pdf路径
-directory = r"C:\Users\林夕\Downloads\pdf2image\pdf"
+directory = #在这里输入装pdf的文件夹路径
 files = get_all_files(directory)
 
 for file in files:
