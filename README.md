@@ -1,15 +1,24 @@
-# pdf转图片-pdf-to-image-
-一个基于python批量转换pdf成图片的工具
+# PDF to Image
+English | [中文](./README_cn.md)
+
+**This tool, based on [Python](https://www.python.org/), allows you to convert PDF files to JPG images in bulk.**
 
 
-在使用之前,请在Python中安装fitz包:
+Before running the tool, please install the PyMuPDF[^1] package in Python.
 
-先确保已安装pip,用此命令进行检查
+To ensure that pip is installed, use the following command:
 
+```
 pip --version
+```
 
-使用pip安装PyMuPDF：
+You can use pip to install PyMuPDF with the following command:
 
+```
 pip install PyMuPDF
+```
 
-(此外的设置代码中均用注释)
+> [!TIP]
+> All additional setup code is provided as comments.
+
+[^1]:Imported as `fitz`
