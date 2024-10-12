@@ -1,5 +1,5 @@
-# pdf-jpg-pdf-to-jpg-
-一个基于python批量转换pdf成jpg的工具
+# pdf转图片-pdf-to-image-
+一个基于python批量转换pdf成图片的工具
 
 
 在使用之前,请在Python中安装fitz包:
